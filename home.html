@@ -15,13 +15,11 @@
 
     body {
       font-family: 'Orbitron', sans-serif;
-      background: url('img/concept.png') no-repeat center center fixed ;
+      background: url('img/concept.png') no-repeat center center fixed;
       background-size: cover;
       color: hsl(229, 43%, 16%);
       scroll-behavior: smooth;
       overflow-x: hidden;
-      
-
     }
 
     .logo {
@@ -90,7 +88,6 @@
       border: 1px solid rgba(229, 43, 15, 0.1);
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       transition: all 0.4s ease-in-out;
-        backdrop-filter: blur(8px);
     }
 
     .card:hover {
@@ -163,7 +160,6 @@
     .hearts-carousel {
       position: absolute;
       top: 50%;
-      /* esattamente a metà altezza del logo */
       transform: translateY(-50%);
       width: 100%;
       white-space: nowrap;
@@ -172,7 +168,6 @@
       opacity: 0.15;
       z-index: 1;
     }
-
 
     .hearts-track {
       display: inline-block;
@@ -197,25 +192,45 @@
       filter: drop-shadow(0 0 20px hsl(294, 100%, 79.8%)) drop-shadow(0 0 40px hsl(294, 100%, 79.8%));
     }
 
-    .full-width {
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  border-radius: 0; /* rimuove gli angoli arrotondati */
-}
+    .background-blur {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(12px);
+    }
 
-.background-blur {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 0;
-  pointer-events: none;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(12px);
-}
+    .card-image.bordered {
+      width: 300px;
+      height: auto;
+      display: block;
+      border-radius: 20px;
+      border: 4px solid hsl(294, 100%, 79.8%);
+      animation: neon-border-pulse 1.8s ease-in-out infinite;
+      box-shadow:
+        0 0 10px hsl(294, 100%, 79.8%),
+        0 0 20px hsl(294, 100%, 79.8%),
+        0 0 30px hsl(294, 100%, 79.8%);
+    }
+
+    @keyframes neon-border-pulse {
+      0% {
+        box-shadow: 0 0 5px hsl(294, 100%, 79.8%), 0 0 10px hsl(294, 100%, 79.8%), 0 0 15px hsl(294, 100%, 79.8%);
+      }
+
+      50% {
+        box-shadow: 0 0 20px hsl(294, 100%, 79.8%), 0 0 30px hsl(294, 100%, 79.8%), 0 0 40px hsl(294, 100%, 79.8%);
+      }
+
+      100% {
+        box-shadow: 0 0 5px hsl(294, 100%, 79.8%), 0 0 10px hsl(294, 100%, 79.8%), 0 0 15px hsl(294, 100%, 79.8%);
+      }
+    }
   </style>
-
 </head>
 
 <body>
@@ -224,34 +239,31 @@
     <div class="logo-wrapper">
       <div class="hearts-carousel">
         <div class="hearts-track">
-          ❤️ 🩷 💜 💖 💘 💝 💗 💓 ❤️ 🩷 💜 💖 💘 💝 💗 💓
-          ❤️ 🩷 💜 💖 💘 💝 💗 💓 ❤️ 🩷 💜 💖 💘 💝 💗 💓
-          ❤️ 🩷 💜 💖 💘 💝 💗 💓 ❤️ 🩷 💜 💖 💘 💝 💗 💓
-          ❤️ 🩷 💜 💖 💘 💝 💗 💓 ❤️ 🩷 💜 💖 💘 💝 💗 💓
-          ❤️ 🩷 💜 💖 💘 💝 💗 💓 ❤️ 🩷 💜 💖 💘 💝 💗 💓
-          ❤️ 🩷 💜 💖 💘 💝 💗 💓 ❤️ 🩷 💜 💖 💘 💝 💗 💓
-          ❤️ 🩷 💜 💖 💘 💝 💗 💓 ❤️ 🩷 💜 💖 💘 💝 💗 💓
-          ❤️ 🩷 💜 💖 💘 💝 💗 💓 ❤️ 🩷 💜 💖 💘 💝 💗 💓
+          ❤️ 🩷 💜 💖 💘 💝 💗 💓 ❤️ 🩷 💜 💖 💘 💝 💗 💓 ❤️ 🩷 💜 💖 💘 💝 💗 💓 ❤️ 🩷 💜 💖 💘 💝 💗 💓 ❤️ 🩷 💜 💖 💘
+          💝 💗 💓 ❤️ 🩷 💜 💖 💘 💝 💗 💓 ❤️ 🩷 💜 💖 💘 💝 💗 💓 ❤️ 🩷 💜 💖 💘 💝 💗 💓
         </div>
       </div>
       <img src="img/logo.png" alt="Social Pulse Logo" class="logo-fixed">
     </div>
   </header>
-
-
   <section>
     <h2 style="text-align: center;">🔮 Welcome to Social Pulse 🔮</h2>
     <div class="card">
       <h3>Feel the Connection</h3>
-      <p>Experience the heartbeat of social media with our innovative platform. Engage, share, and connect like never before.</p>
+      <p>Experience the heartbeat of social media with our innovative platform. Engage, share, and connect like never
+        before.</p>
     </div>
-
     <div class="card">
       <h3>Join the Community</h3>
-      <p>Connect with friends and discover new interests. Our platform is designed to bring people together in a vibrant online community.</p>
+      <p>Connect with friends and discover new interests. Our platform is designed to bring people together in a vibrant
+        online community.</p>
     </div>
-
-
+    <div class="card fit-to-image" style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+      <img src="img/image1.png" class="card-image bordered">
+      <img src="img/image2.png" class="card-image bordered">
+      <img src="img/image3.png" class="card-image bordered">
+    </div>
+  </section>
   <footer>
     © 2025 Social Pulse – Feel the Connection
   </footer>
