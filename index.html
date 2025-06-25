@@ -1,155 +1,207 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Social Pulse</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Social Pulse Intro</title>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    body {
-      font-family: 'Orbitron', sans-serif;
-      background: url('img/background.webp') no-repeat center center fixed;
-      background-size: cover;
-      color: white;
-      scroll-behavior: smooth;
-      overflow-x: hidden;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.7); /* Migliora la leggibilità globale */
+
+    body, html {
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+      background-color: black;
     }
-    header {
-      padding: 5rem 2rem 2rem;
-      text-align: center;
-      background: black;
-    }
-    header h1 {
-      color: #f72585;
-      font-size: 4rem;
-      animation: pulse-glow 1.5s infinite;
-      text-shadow: 0 0 10px white, 0 0 20px white;
-    }
-    @keyframes pulse-glow {
-      0% { text-shadow: 0 0 10px white, 0 0 20px white; transform: scale(1); }
-      50% { text-shadow: 0 0 30px white, 0 0 60px white; transform: scale(1.05); }
-      100% { text-shadow: 0 0 10px white, 0 0 20px white; transform: scale(1); }
-    }
-    section {
-      padding: 2.5rem 2rem;   /* Ridotto da 6rem */
-      max-width: 1100px;
-      margin: 1.5rem auto;    /* Ridotto da auto */
+
+    .intro-screen {
       position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 1s ease-in-out;
       z-index: 2;
+      overflow: hidden;
     }
-    section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-      color: #f72585;
-      text-shadow: 0 0 10px #f72585;
-    }
-    .card {
-      background: rgba(30,30,30,0.18);
-      padding: 1.5rem;        /* Ridotto da 2.5rem */
-      margin: 1rem 0;         /* Ridotto da 2rem */
-      border-radius: 15px;
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255,255,255,0.2);
-      box-shadow: 0 0 20px rgba(247, 37, 133, 0.3);
-      transition: all 0.4s ease-in-out;
-    }
-    .card:hover {
-      transform: translateY(-5px) scale(1.02);
-      box-shadow: 0 0 30px rgba(247, 37, 133, 0.6);
-    }
-    .parallax {
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 400px;
-      margin: 3rem 0;
-      border-radius: 20px;
-      position: relative;
-    }
-    .parallax::before {
-      content: "";
+
+    video.bg-video {
       position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.4);
-      border-radius: 20px;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
     }
-    .parallax-1 { background-image: url('img/parallax1.png'); }
-    .parallax-2 { background-image: url('img/parallax2.png'); }
-    footer {
-      text-align: center;
-      padding: 3rem 2rem;
-      background: #111;
-      color: #ccc;
-      font-size: 0.9rem;
+
+    .logo {
+      width: 1000px;
+      height: auto;
+      animation: pulse-glow 1.5s infinite;
+      filter: drop-shadow(0 0 20px hsl(294, 100%, 79.8%)) drop-shadow(0 0 40px hsl(294, 100%, 79.8%));
+      margin-bottom: 40px;
+      z-index: 3;
     }
-    header h1, section h2, .card, footer, ul, li, a {
-      text-shadow: 0 2px 8px rgba(0,0,0,0.85); /* Ombra più marcata per i testi principali */
+    .logo:hover {
+      animation: pulse 1.5s infinite;
+      transform: scale(1.05);
     }
-    @media (max-width: 768px) {
-      header h1 { font-size: 2.5rem; }
-      section h2 { font-size: 1.8rem; }
-      .parallax { background-attachment: scroll; }
+
+    .particles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 4;
+    }
+
+    @keyframes pulse-glow {
+      0% { filter: drop-shadow(0 0 10px hsl(294, 100%, 79.8%)) drop-shadow(0 0 20px hsl(294, 100%, 79.8%)); }
+      50% { filter: drop-shadow(0 0 30px hsl(294, 100%, 79.8%)) drop-shadow(0 0 60px hsl(294, 100%, 79.8%)); }
+      100% { filter: drop-shadow(0 0 10px hsl(294, 100%, 79.8%)) drop-shadow(0 0 20px hsl(294, 100%, 79.8%)); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .tornado-effect {
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      top: -50%;
+      left: -50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+      background-repeat: no-repeat;
+      pointer-events: none;
+      animation: cinematicTornado 2s cubic-bezier(0.6, 0.01, 0.6, 1) forwards;
+      z-index: 5;
+      mix-blend-mode: screen;
+    }
+
+    @keyframes cinematicTornado {
+      0% {
+        transform: rotate(0deg) scale(0.1);
+        opacity: 1;
+        clip-path: polygon(50% 50%, 100% 0, 100% 100%, 0 100%, 0 0);
+      }
+      50% {
+        transform: rotate(720deg) scale(2);
+        clip-path: polygon(40% 40%, 60% 40%, 60% 60%, 40% 60%);
+        opacity: 1;
+        filter: blur(10px);
+      }
+      100% {
+        transform: rotate(1440deg) scale(10);
+        clip-path: circle(200% at 50% 50%);
+        opacity: 0;
+        filter: blur(20px);
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>SOCIAL PULSE 💓</h1>
-  </header>
+  <div class="intro-screen" id="intro">
+    <video class="bg-video" autoplay muted loop>
+      <source src="https://cdn.coverr.co/videos/coverr-pink-liquid-burst-6556/1080p.mp4" type="video/mp4">
+    </video>
+    <img src="img/logo.png" alt="Social Pulse Logo" class="logo" onclick="enterSite()">
+    <canvas class="particles" id="particles"></canvas>
+  </div>
 
-  <section id="concept">
-    <h2>🔮 Concept</h2>
-    <!-- <div class="parallax parallax-1"></div> -->
-    <div class="card">
-      Evento serale gratuito per creare connessioni autentiche (18–30 anni), con giochi, format coinvolgenti, DJ set e contenuti social memorabili.
-    </div>
-  </section>
+  <audio id="whooshSound" src="https://assets.mixkit.co/sfx/preview/mixkit-fast-rocket-whoosh-1714.mp3"></audio>
 
-  <section id="format">
-    <h2>🎯 Format Principale – Pulse Experience</h2>
-    <!-- <div class="parallax parallax-2"></div> -->
-    <div class="card">
-      <strong>Pulse Match:</strong> incontri rapidi con carte interattive, atmosfera leggera e coinvolgente.<br><br>
-      <strong>Pulse Connect:</strong> show live con scelte, domande, giochi e verità... tutto condito da vibes e partecipazione.
-    </div>
-  </section>
+  <script>
+    let canvas;
+    let ctx;
+    let particles = [];
 
-  <section id="gamification">
-    <h2>🎰 Token & Ruota dei Premi</h2>
-    <div class="card">
-      Chi riceve un “Pause” ottiene un token per girare la ruota luminosa con premi (cocktail, shot, domande speciali, merch).
-    </div>
-  </section>
+    function enterSite() {
+      const intro = document.getElementById('intro');
+      const tornado = document.createElement('div');
+      tornado.classList.add('tornado-effect');
+      intro.appendChild(tornado);
 
-  <section id="location">
-    <h2>📍 Location & Setup</h2>
-    <div class="card">
-      <ul>
-        <li>Insegna neon “Social Pulse”</li>
-        <li>Photowall, Ring Light, Backdrop</li>
-        <li>Pulse Zone con luci, sedute e microfoni</li>
-        <li>DJ Booth scenico</li>
-      </ul>
-    </div>
-  </section>
+      document.getElementById('whooshSound').play();
 
-  <section id="contact">
-    <h2>🤝 Sponsorship & Contatti</h2>
-    <div class="card">
-      Vuoi collaborare o supportare il progetto? <br>
-      Scrivici a: <a href="mailto:info@socialpulse.club" style="color:#f72585; text-decoration: underline;">info@socialpulse.club</a>
-    </div>
-  </section>
+      setTimeout(() => {
+        window.location.href = 'home.html';
+      }, 2100);
+    }
 
-  <footer>
-    © 2025 Social Pulse – Feel the Connection
-  </footer>
+    function resizeCanvas() {
+      canvas = document.getElementById('particles');
+      ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.vx = (Math.random() - 0.5) * 1.5;
+        this.vy = (Math.random() - 0.5) * 1.5;
+        this.size = Math.random() * 0.8 + 0.3;
+        this.color = Math.random() > 0.5 ? 'rgba(255,105,180,0.8)' : 'rgba(255,255,0,0.8)';
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = this.color;
+        ctx.fillStyle = this.color;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+
+        if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height;
+        }
+      }
+    }
+
+    function initParticles(count) {
+      particles = [];
+      for (let i = 0; i < count; i++) {
+        particles.push(new Particle());
+      }
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      requestAnimationFrame(animateParticles);
+    }
+
+    initParticles(150);
+    animateParticles();
+  </script>
 </body>
 </html>

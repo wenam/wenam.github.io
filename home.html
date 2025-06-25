@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Pulse</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: url('img/background.webp') no-repeat center center fixed;
+      background-size: cover;
+      color: hsl(229, 43%, 16%);
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+    header {
+      padding: 5rem 2rem 2rem;
+      text-align: center;
+      background: linear-gradient(to right, hsl(294, 100%, 79.8%), hsl(229, 43%, 15.88%));
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+    header h1 {
+      color: white;
+      font-size: 4rem;
+      animation: pulse-glow 1.5s infinite;
+      text-shadow: 0 0 10px hsl(294, 100%, 79.8%), 0 0 20px hsl(294, 100%, 79.8%);
+    }
+    @keyframes pulse-glow {
+      0% { text-shadow: 0 0 10px white, 0 0 20px white; transform: scale(1); }
+      50% { text-shadow: 0 0 30px white, 0 0 60px white; transform: scale(1.05); }
+      100% { text-shadow: 0 0 10px white, 0 0 20px white; transform: scale(1); }
+    }
+    section {
+      padding: 6rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+      position: relative;
+      z-index: 2;
+    }
+    section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: hsl(294, 100%, 79.8%);
+      text-shadow: 0 0 4px rgb(19, 16, 16), 0 0 8px rgb(0, 0, 0), 0 0 12px rgb(0, 0, 0), 0 0 18px hsl(294, 100%, 79.8%);
+    }
+    .card {
+      background: rgba(255,255,255,0.6);
+      color: hsl(229, 43%, 15.88%);
+      padding: 2.5rem;
+      margin: 2rem 0;
+      border-radius: 15px;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(229,43,15,0.1);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      transition: all 0.4s ease-in-out;
+    }
+    .card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 0 30px rgba(247, 37, 133, 0.6);
+    }
+    .parallax {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 400px;
+      margin: 3rem 0;
+      border-radius: 20px;
+      position: relative;
+    }
+    .parallax::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.4);
+      border-radius: 20px;
+    }
+    .parallax-1 { background-image: url('img/concept.png'); }
+    .parallax-2 { background-image: url('img/concept.png'); }
+    footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      background: #111;
+      color: #ffeded;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.5rem; }
+      section h2 { font-size: 1.8rem; }
+      .parallax { background-attachment: scroll; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SOCIAL PULSE 💓</h1>
+  </header>
+
+  <section id="concept">
+    <h2>🔮 Concept</h2>
+    <div class="parallax parallax-1"></div>
+    <div class="card">
+      Evento serale gratuito per creare connessioni autentiche (18–30 anni), con giochi, format coinvolgenti, DJ set e contenuti social memorabili.
+    </div>
+  </section>
+
+  <section id="format">
+    <h2>🎯 Format Principale – Pulse Experience</h2>
+    <div class="parallax parallax-2"></div>
+    <div class="card">
+      <strong>Pulse Match:</strong> incontri rapidi con carte interattive, atmosfera leggera e coinvolgente.<br><br>
+      <strong>Pulse Connect:</strong> show live con scelte, domande, giochi e verità... tutto condito da vibes e partecipazione.
+    </div>
+  </section>
+
+  <section id="gamification">
+    <h2>🎰 Token & Ruota dei Premi</h2>
+    <div class="card">
+      Chi riceve un “Pause” ottiene un token per girare la ruota luminosa con premi (cocktail, shot, domande speciali, merch).
+    </div>
+  </section>
+
+  <section id="location">
+    <h2>📍 Location & Setup</h2>
+    <div class="card">
+      <ul>
+        <li>Insegna neon “Social Pulse”</li>
+        <li>Photowall, Ring Light, Backdrop</li>
+        <li>Pulse Zone con luci, sedute e microfoni</li>
+        <li>DJ Booth scenico</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>🤝 Sponsorship & Contatti</h2>
+    <div class="card">
+      Vuoi collaborare o supportare il progetto? <br>
+      Scrivici a: <a href="mailto:info@socialpulse.club" style="color:#f72585; text-decoration: underline;">info@socialpulse.club</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Social Pulse – Feel the Connection
+  </footer>
+</body>
+</html>
