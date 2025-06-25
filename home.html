@@ -19,8 +19,18 @@
       scroll-behavior: smooth;
       overflow-x: hidden;
     }
+      .logo {
+      width: 300px;
+      height: auto;
+      animation: pulse-glow 1.5s infinite;
+      filter: drop-shadow(0 0 20px hsl(294, 100%, 79.8%)) drop-shadow(0 0 40px hsl(294, 100%, 79.8%));
+      margin-bottom: -150px;
+      margin-top: -180px;
+      z-index: 3;
+    }
+    
     header {
-      padding: 5rem 2rem 2rem;
+      padding: 5rem 2rem 2rem; 
       text-align: center;
       background: linear-gradient(to right, hsl(294, 100%, 79.8%), hsl(229, 43%, 15.88%));
       box-shadow: 0 0 20px rgba(0,0,0,0.2);
@@ -99,7 +109,7 @@
 </head>
 <body>
   <header>
-    <h1>SOCIAL PULSE 💓</h1>
+    <img src="img/logo.png" alt="Social Pulse Logo" class="logo">
   </header>
 
   <section id="concept">
