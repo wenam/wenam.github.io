@@ -6,7 +6,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -67,8 +68,13 @@ header {
 }
 
 @keyframes scroll-hearts {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes pulse-glow {
@@ -76,10 +82,12 @@ header {
     text-shadow: 0 0 10px white, 0 0 20px white;
     transform: scale(1);
   }
+
   50% {
     text-shadow: 0 0 30px white, 0 0 60px white;
     transform: scale(1.05);
   }
+
   100% {
     text-shadow: 0 0 10px white, 0 0 20px white;
     transform: scale(1);
@@ -109,7 +117,7 @@ section {
   max-width: 800px;
   margin-inline: auto;
   color: #fdfdfd;
-  text-shadow: 0 0 6px rgba(0,0,0,0.5);
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
 }
 
 .moments-title {
@@ -148,6 +156,7 @@ section {
       0 0 15px hsl(294, 100%, 79.8%);
     border-color: hsl(294, 100%, 79.8%);
   }
+
   50% {
     box-shadow:
       0 0 30px hsl(294, 100%, 79.8%),
@@ -155,6 +164,7 @@ section {
       0 0 90px hsl(294, 100%, 79.8%);
     border-color: #fff;
   }
+
   100% {
     box-shadow:
       0 0 5px hsl(294, 100%, 79.8%),
@@ -181,9 +191,11 @@ section {
   0% {
     box-shadow: 0 0 5px hsl(294, 100%, 79.8%), 0 0 10px hsl(294, 100%, 79.8%), 0 0 15px hsl(294, 100%, 79.8%);
   }
+
   50% {
     box-shadow: 0 0 20px hsl(294, 100%, 79.8%), 0 0 30px hsl(294, 100%, 79.8%), 0 0 40px hsl(294, 100%, 79.8%);
   }
+
   100% {
     box-shadow: 0 0 5px hsl(294, 100%, 79.8%), 0 0 10px hsl(294, 100%, 79.8%), 0 0 15px hsl(294, 100%, 79.8%);
   }
@@ -227,6 +239,7 @@ section {
   border-radius: 18px 18px 4px 18px;
   border: none;
 }
+
 .chat-bubble[style*="align-self: flex-start"] {
   background: #fff;
   color: hsl(229, 43%, 16%);
@@ -239,9 +252,17 @@ section {
   width: 1ch;
   animation: blink 1s steps(1) infinite;
 }
+
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }
 
 .background-blur {
@@ -285,20 +306,23 @@ footer {
   margin: 2em 0;
   justify-content: center;
 }
+
 .pulse-phase-card {
-  background: rgba(255,255,255,0.85);
+  background: rgba(255, 255, 255, 0.85);
   border-radius: 18px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
   padding: 1.5em 1.2em;
   max-width: 340px;
   min-width: 260px;
   flex: 1 1 260px;
 }
+
 .pulse-phase-card h4 {
   margin-top: 0;
   color: #b8007d;
   font-family: 'Orbitron', sans-serif;
 }
+
 .phase-note {
   margin-top: 1em;
   background: #ffe6fa;
@@ -327,6 +351,7 @@ footer {
     box-shadow: 0 0 40px 0 #ffb3ec, 0 0 0 transparent;
     border-color: #b8007d;
   }
+
   100% {
     box-shadow: 0 0 80px 20px #ffb3ec, 0 0 0 transparent;
     border-color: #ff4fcf;
@@ -347,9 +372,9 @@ footer {
 
 /* Migliora i riquadri delle fasi */
 .pulse-phase-card {
-  background: rgba(255,255,255,0.97);
+  background: rgba(255, 255, 255, 0.97);
   border-radius: 22px;
-  box-shadow: 0 4px 32px 0 #ffb3ec, 0 1.5px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 32px 0 #ffb3ec, 0 1.5px 8px rgba(0, 0, 0, 0.08);
   padding: 2.2em 1.5em;
   max-width: 400px;
   min-width: 260px;
@@ -358,9 +383,10 @@ footer {
   border: 2.5px solid #ff4fcf;
   transition: transform 0.2s;
 }
+
 .pulse-phase-card:hover {
   transform: scale(1.04) rotate(-1deg);
-  box-shadow: 0 8px 48px 0 #ffb3ec, 0 2px 12px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 48px 0 #ffb3ec, 0 2px 12px rgba(0, 0, 0, 0.12);
 }
 
 .pulse-phase-card h4 {
@@ -393,7 +419,7 @@ footer {
   max-width: 600px;
   background: linear-gradient(90deg, #fff0fa 0%, #ffe6fa 100%);
   border-radius: 22px;
-  box-shadow: 0 0 40px 0 #ffb3ec, 0 2px 12px rgba(0,0,0,0.10);
+  box-shadow: 0 0 40px 0 #ffb3ec, 0 2px 12px rgba(0, 0, 0, 0.10);
   font-size: 1.35rem;
   font-weight: 700;
   color: #b8007d;
@@ -411,28 +437,124 @@ footer {
   filter: drop-shadow(0 0 12px #ffb3ec);
 }
 
+/* Evidenzia il cartello di attenzione Second Chance */
+.second-chance-alert {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2.5em auto 0 auto;
+  padding: 1.5em 1.2em;
+  max-width: 520px;
+  background: linear-gradient(90deg, #fffbe6 0%, #ffe6e6 100%);
+  border-radius: 18px;
+  box-shadow: 0 0 32px 0 #ffe6a1, 0 2px 12px rgba(0, 0, 0, 0.10);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #b8007d;
+  text-align: center;
+  border: 2.5px solid #ffb300;
+  position: relative;
+  z-index: 10;
+}
+
+.alert-emoji {
+  font-size: 2.2rem;
+  margin-bottom: 0.3em;
+}
+
+.alert-token {
+  width: 38px;
+  vertical-align: middle;
+  margin-left: 0.2em;
+}
+
+.pulse-extra-highlight {
+  margin: 3em auto 2em auto;
+  padding: 2.5em 1em 2em 1em;
+  border-radius: 32px;
+  background: linear-gradient(120deg, #f0f7ff 0%, #ffe6fa 100%);
+  box-shadow: 0 0 40px 0 #b3e6ff, 0 2px 12px rgba(0, 0, 0, 0.07);
+  max-width: 1100px;
+}
+
+.pulse-extra-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
+  margin-top: 2em;
+}
+
+.pulse-extra-card {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+  padding: 1.5em 1.2em;
+  max-width: 320px;
+  min-width: 220px;
+  flex: 1 1 260px;
+  margin: 0.5em;
+  text-align: center;
+  border: 2px solid #b8007d;
+}
+
+.pulse-extra-card h4 {
+  margin-top: 0;
+  color: #b8007d;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.25rem;
+  text-shadow: 0 0 8px #ffb3ec;
+}
+
 @media (max-width: 900px) {
   .card {
     flex-direction: column;
     text-align: center;
     gap: 1rem;
   }
+
   .card-image.bordered {
     width: 100%;
     max-width: 350px;
     margin: 0 auto;
   }
+
   .chat-col {
     max-width: 100%;
   }
+
   .pulse-experience-container {
     flex-direction: column;
     align-items: center;
     gap: 1.5em;
   }
+
   .pulse-phase-card {
     max-width: 95vw;
     min-width: unset;
     margin: 0.7em 0;
+  }
+}
+
+.rainbow-glow {
+  font-weight: bold;
+  background: linear-gradient(270deg, #ff0080, #ff8c00, #fff200, #00ff6a, #00cfff, #2e2bff, #ff00c8, #ff0080);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  animation: rainbow-move 3s linear infinite;
+  filter: drop-shadow(0 0 8px #fff) drop-shadow(0 0 16px #ffb3ec);
+}
+
+@keyframes rainbow-move {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: 0 0;
   }
 }
