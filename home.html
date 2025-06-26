@@ -1,312 +1,12 @@
 <!DOCTYPE html>
 <html lang="it">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Social Pulse</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Orbitron', sans-serif;
-      background: url('img/concept.png') no-repeat center center fixed;
-      background-size: cover;
-      color: hsl(229, 43%, 16%);
-      scroll-behavior: smooth;
-      overflow-x: hidden;
-    }
-
-    .logo {
-      width: 300px;
-      height: auto;
-      animation: pulse-glow 1.5s infinite;
-      filter: drop-shadow(0 0 20px hsl(294, 100%, 79.8%)) drop-shadow(0 0 40px hsl(294, 100%, 79.8%));
-      margin-bottom: -150px;
-      margin-top: -180px;
-      z-index: 3;
-    }
-
-    header {
-      padding: 0;
-      text-align: center;
-      background: linear-gradient(to right, hsl(294, 100%, 49%), hsl(229, 43%, 15.88%));
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    }
-
-    header h1 {
-      color: white;
-      font-size: 4rem;
-      animation: pulse-glow 1.5s infinite;
-      text-shadow: 0 0 10px hsl(294, 100%, 79.8%), 0 0 20px hsl(294, 100%, 79.8%);
-    }
-
-    @keyframes pulse-glow {
-      0% {
-        text-shadow: 0 0 10px white, 0 0 20px white;
-        transform: scale(1);
-      }
-
-      50% {
-        text-shadow: 0 0 30px white, 0 0 60px white;
-        transform: scale(1.05);
-      }
-
-      100% {
-        text-shadow: 0 0 10px white, 0 0 20px white;
-        transform: scale(1);
-      }
-    }
-
-    section {
-      padding: 6rem 2rem;
-      max-width: 1100px;
-      margin: auto;
-      position: relative;
-      z-index: 2;
-    }
-
-    section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-      color: hsl(294, 100%, 79.8%);
-      text-shadow: 0 0 4px rgb(19, 16, 16), 0 0 8px rgb(0, 0, 0), 0 0 12px rgb(0, 0, 0), 0 0 18px hsl(294, 100%, 79.8%);
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.6);
-      color: hsl(229, 43%, 15.88%);
-      padding: 2.5rem;
-      margin: 2rem 0;
-      border-radius: 15px;
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(229, 43, 15, 0.1);
-      box-shadow:
-        0 0 10px hsl(294, 100%, 79.8%),
-        0 0 20px hsl(294, 100%, 79.8%),
-        0 0 30px hsl(294, 100%, 79.8%);
-      animation: neon-card-glow 2s ease-in-out infinite alternate;
-    }
-
-    @keyframes neon-card-glow {
-      0% {
-        box-shadow:
-          0 0 5px hsl(294, 100%, 79.8%),
-          0 0 10px hsl(294, 100%, 79.8%),
-          0 0 15px hsl(294, 100%, 79.8%);
-        border-color: hsl(294, 100%, 79.8%);
-      }
-
-      50% {
-        box-shadow:
-          0 0 30px hsl(294, 100%, 79.8%),
-          0 0 60px hsl(294, 100%, 79.8%),
-          0 0 90px hsl(294, 100%, 79.8%);
-        border-color: #fff;
-      }
-
-      100% {
-        box-shadow:
-          0 0 5px hsl(294, 100%, 79.8%),
-          0 0 10px hsl(294, 100%, 79.8%),
-          0 0 15px hsl(294, 100%, 79.8%);
-        border-color: hsl(294, 100%, 79.8%);
-      }
-    }
-
-    .parallax {
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 400px;
-      margin: 3rem 0;
-      border-radius: 20px;
-      position: relative;
-    }
-
-    .parallax::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.4);
-      border-radius: 20px;
-    }
-
-    .parallax-1 {
-      background-image: url('img/concept.png');
-    }
-
-    .parallax-2 {
-      background-image: url('img/concept.png');
-    }
-
-    footer {
-      text-align: center;
-      padding: 3rem 2rem;
-      background: rgba(17, 17, 17, 0.95);
-      color: #ffeded;
-      font-size: 0.9rem;
-      position: relative;
-      z-index: 2;
-    }
-
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.5rem;
-      }
-
-      section h2 {
-        font-size: 1.8rem;
-      }
-
-      .parallax {
-        background-attachment: scroll;
-      }
-    }
-
-    .logo-wrapper {
-      position: relative;
-      width: 100%;
-      height: 300px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 2;
-    }
-
-    .hearts-carousel {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 100%;
-      white-space: nowrap;
-      overflow: hidden;
-      font-size: 2.5rem;
-      opacity: 0.15;
-      z-index: 1;
-    }
-
-    .hearts-track {
-      display: inline-block;
-      animation: scroll-hearts 25s linear infinite;
-    }
-
-    @keyframes scroll-hearts {
-      0% {
-        transform: translateX(0);
-      }
-
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
-    .logo-fixed {
-      width: 300px;
-      height: auto;
-      z-index: 3;
-      animation: pulse-glow 1.5s infinite;
-      filter: drop-shadow(0 0 20px hsl(294, 100%, 79.8%)) drop-shadow(0 0 40px hsl(294, 100%, 79.8%));
-    }
-
-    .background-blur {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: 0;
-      pointer-events: none;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(12px);
-    }
-
-    .card-image.bordered {
-      width: 300px;
-      height: auto;
-      display: block;
-      border-radius: 20px;
-      border: 4px solid hsl(294, 100%, 79.8%);
-      animation: neon-border-pulse 1.8s ease-in-out infinite;
-      box-shadow:
-        0 0 10px hsl(294, 100%, 79.8%),
-        0 0 20px hsl(294, 100%, 79.8%),
-        0 0 30px hsl(294, 100%, 79.8%);
-    }
-
-    @keyframes neon-border-pulse {
-      0% {
-        box-shadow: 0 0 5px hsl(294, 100%, 79.8%), 0 0 10px hsl(294, 100%, 79.8%), 0 0 15px hsl(294, 100%, 79.8%);
-      }
-
-      50% {
-        box-shadow: 0 0 20px hsl(294, 100%, 79.8%), 0 0 30px hsl(294, 100%, 79.8%), 0 0 40px hsl(294, 100%, 79.8%);
-      }
-
-      100% {
-        box-shadow: 0 0 5px hsl(294, 100%, 79.8%), 0 0 10px hsl(294, 100%, 79.8%), 0 0 15px hsl(294, 100%, 79.8%);
-      }
-    }
-
-    .hearts-rain {
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 100vw;
-      height: 100vh;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .chat-bubble {
-      opacity: 0;
-      transition: opacity 0.2s;
-      position: relative;
-      overflow: hidden;
-      white-space: pre-line;
-      display: inline-block;
-      min-height: 2.2em;
-      width: auto;
-      padding: 0.8rem 1.2rem;
-      margin-bottom: 0.3rem;
-      font-size: 1.08rem;
-      border-radius: 18px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
-      max-width: 90%;
-      vertical-align: top;
-      border: 1px solid transparent;
-    }
-
-    .chat-bubble.typing {
-      opacity: 1;
-    }
-
-    /* Allineamento e colori automatici */
-    .chat-bubble[style*="align-self: flex-end"] {
-      background: linear-gradient(135deg, hsl(294, 100%, 79.8%), hsl(294, 100%, 49%));
-      color: #fff;
-      border-radius: 18px 18px 4px 18px;
-      border: none;
-    }
-
-    .chat-bubble[style*="align-self: flex-start"] {
-      background: #fff;
-      color: hsl(229, 43%, 16%);
-      border-radius: 18px 18px 18px 4px;
-      border: 1px solid hsl(294, 100%, 79.8%);
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
   <div class="background-blur"></div>
   <header>
@@ -321,190 +21,61 @@
     </div>
   </header>
   <section>
-    <h2 style="text-align: center; font-size: 3rem; color: #fff; text-shadow: 0 0 12px hsl(294, 100%, 79.8%);">
+    <h2 class="main-title">
       🔮 Welcome to Social Pulse 🔮
     </h2>
-    <p
-      style="text-align: center; font-size: 1.3rem; margin-top: 1rem; max-width: 800px; margin-inline: auto; color: #fdfdfd; text-shadow: 0 0 6px rgba(0,0,0,0.5);">
+    <p class="subtitle">
       Vivi l'esperienza che trasforma un incontro in connessione. Un evento reale, interattivo, dove stile e relazioni
       si accendono a ogni battito. ✨
     </p>
     <div class="card">
       <h3>💓 Feel the Connection</h3>
-      <p>Experience the heartbeat of social media with our innovative platform. Engage, share, and connect like never
-        before.</p>
+      <p>Experience the heartbeat of social media with our innovative platform. Engage, share, and connect like never before.</p>
     </div>
 
-    <h3
-      style="text-align: center; font-size: 2rem; margin-top: 4rem; color: #fff; text-shadow: 0 0 10px hsl(294, 100%, 79.8%);">
-      ✨ Pulse Moments ✨</h3>
+    <h3 class="moments-title">
+      ✨ Pulse Moments ✨
+    </h3>
 
     <!-- CARD 1 -->
-    <div class="card fit-to-image"
-      style="display: flex; align-items: flex-start; justify-content: center; gap: 2rem; flex-wrap: wrap; background: rgba(255,255,255,0.05); box-shadow: none; border: none;">
-      <img src="img/image1.png" class="card-image bordered" style="flex-shrink: 0;">
-      <div style="max-width: 350px; width: 100%;">
-        <div style="display: flex; flex-direction: column; gap: 0.7rem;">
-          <div class="chat-bubble" data-text="Cosa fai stasera? 💜" style="align-self: flex-end;"></div>
-          <div class="chat-bubble" data-text="C'è Social Pulse, un evento che trasforma ogni incontro in un momento speciale. Unisciti a noi per una serata di connessioni autentiche e vibrazioni positive! 💖" style="align-self: flex-start;"></div>
-          <div class="chat-bubble" data-text="Sembra il solito evento estivo, non ha nulla di speciale 😒" style="align-self: flex-end;"></div>
-          <div class="chat-bubble" data-text="AHAHAHAH ti sbagli, è il primo evento che include format giovani e da la possibilità a tutti di partecipare" style="align-self: flex-start;"></div>
-        </div>
+    <div class="card fit-to-image">
+      <img src="img/image1.png" class="card-image bordered" alt="Card 1">
+      <div class="chat-col">
+        <div class="chat-bubble" data-text="Cosa fai stasera? 💜" style="align-self: flex-end;"></div>
+        <div class="chat-bubble" data-text="C'è Social Pulse, un evento che trasforma ogni incontro in un momento speciale. Unisciti a noi per una serata di connessioni autentiche e vibrazioni positive! 💖" style="align-self: flex-start;"></div>
+        <div class="chat-bubble" data-text="Sembra il solito evento estivo, non ha nulla di speciale 😒" style="align-self: flex-end;"></div>
+        <div class="chat-bubble" data-text="AHAHAHAH ti sbagli, è il primo evento che include format giovani e da la possibilità a tutti di partecipare" style="align-self: flex-start;"></div>
       </div>
     </div>
 
     <!-- CARD 2 -->
-    <div class="card fit-to-image"
-      style="display: flex; align-items: flex-start; justify-content: center; gap: 2rem; flex-wrap: wrap; background: rgba(255,255,255,0.05); box-shadow: none; border: none;">
-      <img src="img/image2.png" class="card-image bordered" style="flex-shrink: 0;">
-      <div style="max-width: 350px; width: 100%;">
-        <div style="display: flex; flex-direction: column; gap: 0.7rem;">
-          <div class="chat-bubble" data-text="e di che format si tratta?" style="align-self: flex-end;"></div>
-          <div class="chat-bubble" data-text="Ce ne saranno diversi che scoprirai in serata: ci sono degli &quot;Icebreakers&quot; pronti a farti rompere il ghiaccio con la persona che ti piace o ad aiutarti a trovare qualcuno con i tuoi interessi." style="align-self: flex-start;"></div>
-          <div class="chat-bubble" data-text="BLA BLA" style="align-self: flex-end;"></div>
-          <div class="chat-bubble" data-text="AHAHAHAH ti sbagli, è il primo evento che include format giovani e da la possibilità a tutti di partecipare" style="align-self: flex-start;"></div>
-        </div>
+    <div class="card fit-to-image">
+      <img src="img/image2.png" class="card-image bordered" alt="Card 2">
+      <div class="chat-col">
+        <div class="chat-bubble" data-text="e di che format si tratta?" style="align-self: flex-end;"></div>
+        <div class="chat-bubble" data-text="Ce ne saranno diversi che scoprirai in serata: ci sono degli &quot;Icebreakers&quot; pronti a farti rompere il ghiaccio con la persona che ti piace o ad aiutarti a trovare qualcuno con i tuoi interessi." style="align-self: flex-start;"></div>
+        <div class="chat-bubble" data-text="BLA BLA" style="align-self: flex-end;"></div>
+        <div class="chat-bubble" data-text="AHAHAHAH ti sbagli, è il primo evento che include format giovani e da la possibilità a tutti di partecipare" style="align-self: flex-start;"></div>
       </div>
     </div>
 
     <!-- CARD 3 -->
-    <div class="card fit-to-image"
-      style="display: flex; align-items: flex-start; justify-content: center; gap: 2rem; flex-wrap: wrap; background: rgba(255,255,255,0.05); box-shadow: none; border: none;">
-      <img src="img/image3.png" class="card-image bordered" style="flex-shrink: 0;">
-      <div style="max-width: 350px; width: 100%;">
-        <div style="display: flex; flex-direction: column; gap: 0.7rem;">
-          <div class="chat-bubble" data-text="Cosa fai stasera? 💜" style="align-self: flex-end;"></div>
-          <div class="chat-bubble" data-text="C'è Social Pulse, un evento che trasforma ogni incontro in un momento speciale. Unisciti a noi per una serata di connessioni autentiche e vibrazioni positive! 💖" style="align-self: flex-start;"></div>
-          <div class="chat-bubble" data-text="Sembra il solito evento estivo, non ha nulla di speciale 😒" style="align-self: flex-end;"></div>
-          <div class="chat-bubble" data-text="AHAHAHAH ti sbagli, è il primo evento che include format giovani e da la possibilità a tutti di partecipare" style="align-self: flex-start;"></div>
-        </div>
+    <div class="card fit-to-image">
+      <img src="img/image3.png" class="card-image bordered" alt="Card 3">
+      <div class="chat-col">
+        <div class="chat-bubble" data-text="Cosa fai stasera? 💜" style="align-self: flex-end;"></div>
+        <div class="chat-bubble" data-text="C'è Social Pulse, un evento che trasforma ogni incontro in un momento speciale. Unisciti a noi per una serata di connessioni autentiche e vibrazioni positive! 💖" style="align-self: flex-start;"></div>
+        <div class="chat-bubble" data-text="Sembra il solito evento estivo, non ha nulla di speciale 😒" style="align-self: flex-end;"></div>
+        <div class="chat-bubble" data-text="AHAHAHAH ti sbagli, è il primo evento che include format giovani e da la possibilità a tutti di partecipare" style="align-self: flex-start;"></div>
       </div>
     </div>
-    </div>
-    </div>
   </section>
-
-
 
   <footer>
     © 2025 Social Pulse – Feel the Connection
   </footer>
 
-  <script>
-    // filepath: /Users/wenam/Documents/wenam.github.io/home.html
-    function typeWriter(bubble, text, speed = 22) {
-      return new Promise(resolve => {
-        let i = 0;
-        bubble.innerHTML = '';
-        bubble.classList.add('typing');
-        const cursor = document.createElement('span');
-        cursor.className = 'cursor';
-        cursor.textContent = '|';
-        bubble.appendChild(cursor);
-
-        function type() {
-          if (i < text.length) {
-            cursor.before(text[i]);
-            i++;
-            bubble.style.width = 'auto'; // aggiorna larghezza
-            setTimeout(type, speed);
-          } else {
-            cursor.remove();
-            resolve();
-          }
-        }
-        type();
-      });
-    }
-
-    function animateChatBubbles(container) {
-      const bubbles = Array.from(container.querySelectorAll('.chat-bubble'));
-      let observer;
-      let started = false;
-
-      function startSequence() {
-        if (started) return;
-        started = true;
-        let p = Promise.resolve();
-        bubbles.forEach(bubble => {
-          const text = bubble.getAttribute('data-text');
-          p = p.then(() => typeWriter(bubble, text));
-        });
-      }
-
-      observer = new IntersectionObserver(entries => {
-        if (entries[0].isIntersecting) {
-          startSequence();
-        }
-      }, { threshold: 0.2 });
-
-      observer.observe(container);
-    }
-
-    // Avvia l'animazione per ogni card chat
-    document.querySelectorAll('.card.fit-to-image > div > div').forEach(chatCol => {
-      animateChatBubbles(chatCol);
-    });
-  </script>
-  <script>
-    // filepath: /Users/wenam/Documents/wenam.github.io/home.html
-    const canvas = document.createElement('canvas');
-    canvas.className = 'hearts-rain';
-    document.body.appendChild(canvas);
-
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    const hearts = [];
-    const heartEmoji = ['❤️', '💖', '💗', '💜', '💘', '💝', '💓', '🩷'];
-
-    function randomHeart() {
-      return heartEmoji[Math.floor(Math.random() * heartEmoji.length)];
-    }
-
-    for (let i = 0; i < 30; i++) {
-      const size = 24 + Math.random() * 24;
-      hearts.push({
-        x: Math.random() * window.innerWidth,
-        y: Math.random() * -window.innerHeight,
-        size,
-        speed: 0.5 + (size / 48), // più grande = più veloce
-        emoji: randomHeart(),
-        drift: (Math.random() - 0.5) * 0.5,
-        parallax: 0.2 + (size / 60) // più grande = meno effetto parallax
-      });
-    }
-
-    let scrollY = 0;
-    window.addEventListener('scroll', () => {
-      scrollY = window.scrollY;
-    });
-
-    const ctx = canvas.getContext('2d');
-    function drawHearts() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      hearts.forEach(h => {
-        // Effetto parallax: i cuori più piccoli si muovono di più con lo scroll
-        const parallaxY = h.y + scrollY * h.parallax;
-        ctx.font = `${h.size}px serif`;
-        ctx.globalAlpha = 0.85;
-        ctx.fillText(h.emoji, h.x, parallaxY);
-        h.y += h.speed;
-        h.x += h.drift;
-        if (h.y > canvas.height + 40) {
-          h.y = -40;
-          h.x = Math.random() * canvas.width;
-          h.emoji = randomHeart();
-        }
-      });
-      requestAnimationFrame(drawHearts);
-    }
-    drawHearts();
-  </script>
+  <script src="script.js"></script>
+  <script src="hearts.js"></script>
 </body>
-
 </html>
