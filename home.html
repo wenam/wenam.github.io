@@ -266,6 +266,44 @@
       pointer-events: none;
       z-index: 1;
     }
+
+    .chat-bubble {
+      opacity: 0;
+      transition: opacity 0.2s;
+      position: relative;
+      overflow: hidden;
+      white-space: pre-line;
+      display: inline-block;
+      min-height: 2.2em;
+      width: auto;
+      padding: 0.8rem 1.2rem;
+      margin-bottom: 0.3rem;
+      font-size: 1.08rem;
+      border-radius: 18px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+      max-width: 90%;
+      vertical-align: top;
+      border: 1px solid transparent;
+    }
+
+    .chat-bubble.typing {
+      opacity: 1;
+    }
+
+    /* Allineamento e colori automatici */
+    .chat-bubble[style*="align-self: flex-end"] {
+      background: linear-gradient(135deg, hsl(294, 100%, 79.8%), hsl(294, 100%, 49%));
+      color: #fff;
+      border-radius: 18px 18px 4px 18px;
+      border: none;
+    }
+
+    .chat-bubble[style*="align-self: flex-start"] {
+      background: #fff;
+      color: hsl(229, 43%, 16%);
+      border-radius: 18px 18px 18px 4px;
+      border: 1px solid hsl(294, 100%, 79.8%);
+    }
   </style>
 </head>
 
@@ -300,71 +338,50 @@
     <h3
       style="text-align: center; font-size: 2rem; margin-top: 4rem; color: #fff; text-shadow: 0 0 10px hsl(294, 100%, 79.8%);">
       ✨ Pulse Moments ✨</h3>
+
+    <!-- CARD 1 -->
     <div class="card fit-to-image"
       style="display: flex; align-items: flex-start; justify-content: center; gap: 2rem; flex-wrap: wrap; background: rgba(255,255,255,0.05); box-shadow: none; border: none;">
       <img src="img/image1.png" class="card-image bordered" style="flex-shrink: 0;">
       <div style="max-width: 350px; width: 100%;">
         <div style="display: flex; flex-direction: column; gap: 0.7rem;">
-          <div
-            style="align-self: flex-end; background: linear-gradient(135deg, hsl(294,100%,79.8%), hsl(294,100%,49%)); color: #fff; border-radius: 18px 18px 4px 18px; padding: 0.8rem 1.2rem; font-size: 1.08rem; box-shadow: 0 2px 8px rgba(0,0,0,0.07); max-width: 90%;">
-            Cosa fai stasera? 💜
-          </div>
-          <div
-            style="align-self: flex-start; background: #fff; color: hsl(229,43%,16%); border-radius: 18px 18px 18px 4px; padding: 0.8rem 1.2rem; font-size: 1.08rem; box-shadow: 0 2px 8px rgba(0,0,0,0.07); max-width: 90%; border: 1px solid hsl(294,100%,79.8%);">
-            C'è Social Pulse, un evento che trasforma ogni incontro in un momento speciale. Unisciti a noi per una
-            serata di connessioni autentiche e vibrazioni positive! 💖
-          </div>
-          <div
-            style="align-self: flex-end; background: linear-gradient(135deg, hsl(294,100%,79.8%), hsl(294,100%,49%)); color: #fff; border-radius: 18px 18px 4px 18px; padding: 0.8rem 1.2rem; font-size: 1.08rem; box-shadow: 0 2px 8px rgba(0,0,0,0.07); max-width: 90%;">
-            Sembra il solito evento estivo, non ha nulla di speciale 😒
-          </div>
-          <div
-            style="align-self: flex-start; background: #fff; color: hsl(229,43%,16%); border-radius: 18px 18px 18px 4px; padding: 0.8rem 1.2rem; font-size: 1.08rem; box-shadow: 0 2px 8px rgba(0,0,0,0.07); max-width: 90%; border: 1px solid hsl(294,100%,79.8%);">
-            AHAHAHAH ti sbagli, è il primo evento che include format giovani e da la possibilità a tutti di partecipare
-          </div>
+          <div class="chat-bubble" data-text="Cosa fai stasera? 💜" style="align-self: flex-end;"></div>
+          <div class="chat-bubble" data-text="C'è Social Pulse, un evento che trasforma ogni incontro in un momento speciale. Unisciti a noi per una serata di connessioni autentiche e vibrazioni positive! 💖" style="align-self: flex-start;"></div>
+          <div class="chat-bubble" data-text="Sembra il solito evento estivo, non ha nulla di speciale 😒" style="align-self: flex-end;"></div>
+          <div class="chat-bubble" data-text="AHAHAHAH ti sbagli, è il primo evento che include format giovani e da la possibilità a tutti di partecipare" style="align-self: flex-start;"></div>
         </div>
       </div>
     </div>
 
+    <!-- CARD 2 -->
     <div class="card fit-to-image"
       style="display: flex; align-items: flex-start; justify-content: center; gap: 2rem; flex-wrap: wrap; background: rgba(255,255,255,0.05); box-shadow: none; border: none;">
       <img src="img/image2.png" class="card-image bordered" style="flex-shrink: 0;">
       <div style="max-width: 350px; width: 100%;">
         <div style="display: flex; flex-direction: column; gap: 0.7rem;">
-          <div
-            style="align-self: flex-end; background: linear-gradient(135deg, hsl(294,100%,79.8%), hsl(294,100%,49%)); color: #fff; border-radius: 18px 18px 4px 18px; padding: 0.8rem 1.2rem; font-size: 1.08rem; box-shadow: 0 2px 8px rgba(0,0,0,0.07); max-width: 90%;">
-            e di che format si tratta? </div>
-          <div
-            style="align-self: flex-start; background: #fff; color: hsl(229,43%,16%); border-radius: 18px 18px 18px 4px; padding: 0.8rem 1.2rem; font-size: 1.08rem; box-shadow: 0 2px 8px rgba(0,0,0,0.07); max-width: 90%; border: 1px solid hsl(294,100%,79.8%);">
-            Ce ne saranno diversi che scoprirai in serata: ci sono degli "Icebreakers" pronti a farti rompere il
-            ghiaccio con la persona che ti piace o ad aiutarti a trovare qualcuno con i tuoi interessi.
-          </div>
-          <div
-            style="align-self: flex-end; background: linear-gradient(135deg, hsl(294,100%,79.8%), hsl(294,100%,49%)); color: #fff; border-radius: 18px 18px 4px 18px; padding: 0.8rem 1.2rem; font-size: 1.08rem; box-shadow: 0 2px 8px rgba(0,0,0,0.07); max-width: 90%;">
-            BLA BLA BLA </div>
-          <div
-            style="align-self: flex-start; background: #fff; color: hsl(229,43%,16%); border-radius: 18px 18px 18px 4px; padding: 0.8rem 1.2rem; font-size: 1.08rem; box-shadow: 0 2px 8px rgba(0,0,0,0.07); max-width: 90%; border: 1px solid hsl(294,100%,79.8%);">
-            BLA BLA BLA </div>
+          <div class="chat-bubble" data-text="e di che format si tratta?" style="align-self: flex-end;"></div>
+          <div class="chat-bubble" data-text="Ce ne saranno diversi che scoprirai in serata: ci sono degli &quot;Icebreakers&quot; pronti a farti rompere il ghiaccio con la persona che ti piace o ad aiutarti a trovare qualcuno con i tuoi interessi." style="align-self: flex-start;"></div>
+          <div class="chat-bubble" data-text="BLA BLA" style="align-self: flex-end;"></div>
+          <div class="chat-bubble" data-text="AHAHAHAH ti sbagli, è il primo evento che include format giovani e da la possibilità a tutti di partecipare" style="align-self: flex-start;"></div>
         </div>
       </div>
     </div>
-    </div>
+
+    <!-- CARD 3 -->
     <div class="card fit-to-image"
       style="display: flex; align-items: flex-start; justify-content: center; gap: 2rem; flex-wrap: wrap; background: rgba(255,255,255,0.05); box-shadow: none; border: none;">
       <img src="img/image3.png" class="card-image bordered" style="flex-shrink: 0;">
       <div style="max-width: 350px; width: 100%;">
         <div style="display: flex; flex-direction: column; gap: 0.7rem;">
-          <div
-            style="align-self: flex-end; background: linear-gradient(135deg, hsl(294,100%,79.8%), hsl(294,100%,49%)); color: #fff; border-radius: 18px 18px 4px 18px; padding: 0.8rem 1.2rem; font-size: 1.08rem; box-shadow: 0 2px 8px rgba(0,0,0,0.07); max-width: 90%;">
-            BLA BLA BLA </div>
-          <div
-            style="align-self: flex-start; background: #fff; color: hsl(229,43%,16%); border-radius: 18px 18px 18px 4px; padding: 0.8rem 1.2rem; font-size: 1.08rem; box-shadow: 0 2px 8px rgba(0,0,0,0.07); max-width: 90%; border: 1px solid hsl(294,100%,79.8%);">
-            BLA BLA BLA </div>
+          <div class="chat-bubble" data-text="Cosa fai stasera? 💜" style="align-self: flex-end;"></div>
+          <div class="chat-bubble" data-text="C'è Social Pulse, un evento che trasforma ogni incontro in un momento speciale. Unisciti a noi per una serata di connessioni autentiche e vibrazioni positive! 💖" style="align-self: flex-start;"></div>
+          <div class="chat-bubble" data-text="Sembra il solito evento estivo, non ha nulla di speciale 😒" style="align-self: flex-end;"></div>
+          <div class="chat-bubble" data-text="AHAHAHAH ti sbagli, è il primo evento che include format giovani e da la possibilità a tutti di partecipare" style="align-self: flex-start;"></div>
         </div>
       </div>
     </div>
-
-
+    </div>
+    </div>
   </section>
 
 
@@ -373,7 +390,62 @@
     © 2025 Social Pulse – Feel the Connection
   </footer>
 
+  <script>
+    // filepath: /Users/wenam/Documents/wenam.github.io/home.html
+    function typeWriter(bubble, text, speed = 22) {
+      return new Promise(resolve => {
+        let i = 0;
+        bubble.innerHTML = '';
+        bubble.classList.add('typing');
+        const cursor = document.createElement('span');
+        cursor.className = 'cursor';
+        cursor.textContent = '|';
+        bubble.appendChild(cursor);
 
+        function type() {
+          if (i < text.length) {
+            cursor.before(text[i]);
+            i++;
+            bubble.style.width = 'auto'; // aggiorna larghezza
+            setTimeout(type, speed);
+          } else {
+            cursor.remove();
+            resolve();
+          }
+        }
+        type();
+      });
+    }
+
+    function animateChatBubbles(container) {
+      const bubbles = Array.from(container.querySelectorAll('.chat-bubble'));
+      let observer;
+      let started = false;
+
+      function startSequence() {
+        if (started) return;
+        started = true;
+        let p = Promise.resolve();
+        bubbles.forEach(bubble => {
+          const text = bubble.getAttribute('data-text');
+          p = p.then(() => typeWriter(bubble, text));
+        });
+      }
+
+      observer = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+          startSequence();
+        }
+      }, { threshold: 0.2 });
+
+      observer.observe(container);
+    }
+
+    // Avvia l'animazione per ogni card chat
+    document.querySelectorAll('.card.fit-to-image > div > div').forEach(chatCol => {
+      animateChatBubbles(chatCol);
+    });
+  </script>
   <script>
     // filepath: /Users/wenam/Documents/wenam.github.io/home.html
     const canvas = document.createElement('canvas');
