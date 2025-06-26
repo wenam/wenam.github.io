@@ -277,6 +277,140 @@ footer {
   z-index: 1;
 }
 
+/* Pulse Experience styles */
+.pulse-experience-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  margin: 2em 0;
+  justify-content: center;
+}
+.pulse-phase-card {
+  background: rgba(255,255,255,0.85);
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  padding: 1.5em 1.2em;
+  max-width: 340px;
+  min-width: 260px;
+  flex: 1 1 260px;
+}
+.pulse-phase-card h4 {
+  margin-top: 0;
+  color: #b8007d;
+  font-family: 'Orbitron', sans-serif;
+}
+.phase-note {
+  margin-top: 1em;
+  background: #ffe6fa;
+  border-left: 4px solid #b8007d;
+  padding: 0.7em 1em;
+  border-radius: 8px;
+  font-size: 0.97em;
+}
+
+/* Evidenzia la sezione Pulse Experience */
+.pulse-experience-highlight {
+  position: relative;
+  z-index: 3;
+  margin-top: 2.5em;
+  margin-bottom: 3em;
+  padding: 3em 1em 2em 1em;
+  border-radius: 32px;
+  background: linear-gradient(120deg, #fff0fa 0%, #ffe6fa 100%);
+  box-shadow: 0 0 60px 10px #ffb3ec, 0 0 0 transparent;
+  border: 3px solid #b8007d;
+  animation: pulse-experience-glow 2.5s infinite alternate;
+}
+
+@keyframes pulse-experience-glow {
+  0% {
+    box-shadow: 0 0 40px 0 #ffb3ec, 0 0 0 transparent;
+    border-color: #b8007d;
+  }
+  100% {
+    box-shadow: 0 0 80px 20px #ffb3ec, 0 0 0 transparent;
+    border-color: #ff4fcf;
+  }
+}
+
+/* Titolo principale della sezione */
+.pulse-experience-title {
+  text-align: center;
+  font-size: 2.8rem;
+  color: #b8007d;
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 0 0 18px #ffb3ec, 0 0 40px #fff;
+  margin-bottom: 2.2rem;
+  letter-spacing: 1px;
+  font-weight: 900;
+}
+
+/* Migliora i riquadri delle fasi */
+.pulse-phase-card {
+  background: rgba(255,255,255,0.97);
+  border-radius: 22px;
+  box-shadow: 0 4px 32px 0 #ffb3ec, 0 1.5px 8px rgba(0,0,0,0.08);
+  padding: 2.2em 1.5em;
+  max-width: 400px;
+  min-width: 260px;
+  flex: 1 1 320px;
+  margin: 1.2em;
+  border: 2.5px solid #ff4fcf;
+  transition: transform 0.2s;
+}
+.pulse-phase-card:hover {
+  transform: scale(1.04) rotate(-1deg);
+  box-shadow: 0 8px 48px 0 #ffb3ec, 0 2px 12px rgba(0,0,0,0.12);
+}
+
+.pulse-phase-card h4 {
+  margin-top: 0;
+  color: #b8007d;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.45rem;
+  text-shadow: 0 0 8px #ffb3ec;
+}
+
+.phase-note {
+  margin-top: 1.2em;
+  background: #ffe6fa;
+  border-left: 5px solid #b8007d;
+  padding: 1em 1.2em;
+  border-radius: 10px;
+  font-size: 1.08em;
+  font-weight: 500;
+  color: #b8007d;
+}
+
+/* Evidenzia il messaggio "nessuno perde" */
+.second-chance-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2.5em auto 0 auto;
+  padding: 1.6em 1.2em;
+  max-width: 600px;
+  background: linear-gradient(90deg, #fff0fa 0%, #ffe6fa 100%);
+  border-radius: 22px;
+  box-shadow: 0 0 40px 0 #ffb3ec, 0 2px 12px rgba(0,0,0,0.10);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #b8007d;
+  text-align: center;
+  letter-spacing: 0.5px;
+  position: relative;
+  z-index: 10;
+  border: 2.5px solid #ff4fcf;
+  animation: pulse-experience-glow 2.5s infinite alternate;
+}
+
+.second-chance-img {
+  width: 70px;
+  margin-bottom: 0.7em;
+  filter: drop-shadow(0 0 12px #ffb3ec);
+}
+
 @media (max-width: 900px) {
   .card {
     flex-direction: column;
@@ -290,5 +424,15 @@ footer {
   }
   .chat-col {
     max-width: 100%;
+  }
+  .pulse-experience-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+  }
+  .pulse-phase-card {
+    max-width: 95vw;
+    min-width: unset;
+    margin: 0.7em 0;
   }
 }
